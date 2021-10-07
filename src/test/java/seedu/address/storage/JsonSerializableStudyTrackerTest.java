@@ -1,5 +1,6 @@
 package seedu.address.storage;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import java.nio.file.Path;
@@ -9,6 +10,8 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.JsonUtil;
+import seedu.address.model.StudyTracker;
+import seedu.address.testutil.TypicalStudySpots;
 
 public class JsonSerializableStudyTrackerTest {
 
@@ -18,14 +21,14 @@ public class JsonSerializableStudyTrackerTest {
     private static final Path DUPLICATE_STUDYSPOT_FILE =
             TEST_DATA_FOLDER.resolve("duplicateStudySpotStudyTracker.json");
 
-    //    @Test
-    //    public void toModelType_typicalStudySpotsFile_success() throws Exception {
-    //        JsonSerializableStudyTracker dataFromFile = JsonUtil.readJsonFile(TYPICAL_STUDYSPOTS_FILE,
-    //                JsonSerializableStudyTracker.class).get();
-    //        StudyTracker studyTrackerFromFile = dataFromFile.toModelType();
-    //        StudyTracker typicalStudySpotsStudyTracker = TypicalStudySpots.getTypicalStudyTracker();
-    //        assertEquals(studyTrackerFromFile, typicalStudySpotsStudyTracker);  //todo
-    //    }
+        @Test
+        public void toModelType_typicalStudySpotsFile_success() throws Exception {
+            JsonSerializableStudyTracker dataFromFile = JsonUtil.readJsonFile(TYPICAL_STUDYSPOTS_FILE,
+                    JsonSerializableStudyTracker.class).get();
+            StudyTracker studyTrackerFromFile = dataFromFile.toModelType();
+            StudyTracker typicalStudySpotsStudyTracker = TypicalStudySpots.getTypicalStudyTracker();
+            assertEquals(studyTrackerFromFile, typicalStudySpotsStudyTracker);  //todo
+        }
 
     @Test
     public void toModelType_invalidStudySpotFile_throwsIllegalValueException() throws Exception {

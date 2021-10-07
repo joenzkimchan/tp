@@ -27,6 +27,7 @@ public class TypicalStudySpots {
             .withAddress("UTown").withEmail("-")
             .withRating("4")
             .withTags("coffee")
+            .withAmenities("wifi")
             .build();
     public static final StudySpot CENTRAL_LIBRARY = new StudySpotBuilder().withName("Central library")
             .withAddress("NUS, Central Library")
