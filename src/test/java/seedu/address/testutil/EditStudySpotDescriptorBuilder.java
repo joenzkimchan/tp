@@ -39,6 +39,7 @@ public class EditStudySpotDescriptorBuilder {
         descriptor.setAddress(studySpot.getAddress());
         descriptor.setTags(studySpot.getTags());
         descriptor.setAmenities(studySpot.getAmenities());
+        descriptor.setAddedAmenities(studySpot.getAddedAmenities());
     }
 
     /**

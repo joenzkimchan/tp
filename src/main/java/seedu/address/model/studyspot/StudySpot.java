@@ -25,6 +25,7 @@ public class StudySpot {
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
     private final Set<Amenity> amenities = new HashSet<>();
+    private final Set<Amenity> addedAmenities = new HashSet<>();
 
     /**
      * Every field must be present and not null.
@@ -69,6 +70,14 @@ public class StudySpot {
      */
     public Set<Amenity> getAmenities() {
         return Collections.unmodifiableSet(amenities);
+    }
+
+    /**
+     * Returns an immutable amenity set, which throws {@code UnsupportedOperationException}
+     * if modification is attempted.
+     */
+    public Set<Amenity> getAddedAmenities() {
+        return Collections.unmodifiableSet(addedAmenities);
     }
 
     /**
